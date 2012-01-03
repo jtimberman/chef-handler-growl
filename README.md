@@ -20,7 +20,9 @@ Usage
 
 There are two ways to use Chef Handlers.
 
-1. You can install the RubyGem ahead of time, and configure Chef to use
+### Method 1
+
+You can install the RubyGem ahead of time, and configure Chef to use
 them. To do so:
 
     gem install chef-handler-growl
@@ -32,7 +34,9 @@ Then add to the configuration (`/etc/chef/solo.rb` for chef-solo or
     report_handlers << Chef::Handler::Growl.new
     exception_handlers << Chef::Handler::Growl.new
 
-2. Use the
+### Method 2
+
+Use the
 [chef_handler cookbook by Opscode](http://community.opscode.com/cookbooks/chef_handler).
 You'll need to install the `chef-handler-growl` RubyGem during the
 compile phase like this:
@@ -58,6 +62,8 @@ Things I would like to add:
 * GNTP over the network capability. For example, if I have three
   virtual machines running Chef on an interval, I'd like them to send
   notification to my Mac workstation I'm using.
+
+These are created as issues. Pull requests welcome.
 
 License and Author
 ==================
