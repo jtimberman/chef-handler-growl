@@ -38,15 +38,14 @@ Then add to the configuration (`/etc/chef/solo.rb` for chef-solo or
 
 Use the
 [chef_handler cookbook by Opscode](http://community.opscode.com/cookbooks/chef_handler).
-You'll need to install the `chef-handler-growl` RubyGem during the
-compile phase like this:
+Create a recipe with the following:
 
-    gem_package "chef-handler-growl"
+    # Install the `chef-handler-growl` RubyGem during the compile phase
+    gem_package "chef-handler-growl" do
       action :nothing
     end.run_action(:install)
 
-Then activate the handler with the `chef_handler` LWRP.
-
+    # Then activate the handler with the `chef_handler` LWRP
     chef_handler "Chef::Handler::Growl" do
       source "chef/handler/growl"
       action :enable
