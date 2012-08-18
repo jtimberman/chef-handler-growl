@@ -41,9 +41,7 @@ Use the
 Create a recipe with the following:
 
     # Install the `chef-handler-growl` RubyGem during the compile phase
-    gem_package "chef-handler-growl" do
-      action :nothing
-    end.run_action(:install)
+    chef_gem "chef-handler-growl"
 
     # Then activate the handler with the `chef_handler` LWRP
     chef_handler "Chef::Handler::Growl" do
